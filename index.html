@@ -110,6 +110,9 @@
         display: grid;
         grid-template-columns: repeat(4, minmax(200px, 1fr));
         grid-gap: 16px;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0 20px;
     }
 
     /* ---- Category slider ---- */
@@ -206,6 +209,105 @@
 
     .cat-arrow.next {
         margin-left: 12px;
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 1024px) {
+        .all-card {
+            grid-template-columns: repeat(3, minmax(160px, 1fr));
+            width: 100%;
+            padding: 0 20px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        body {
+            padding: 24px 0;
+        }
+
+        .all-card {
+            grid-template-columns: repeat(2, minmax(140px, 1fr));
+            gap: 12px;
+            padding: 0 16px;
+        }
+
+        .card {
+            width: 100%;
+            padding: 12px;
+        }
+
+        .icon-wrapper {
+            width: 90px;
+            height: 90px;
+        }
+
+        .cat-section {
+            margin-top: 40px;
+            padding: 0 16px;
+        }
+
+        .cat-card {
+            width: 105px;
+            padding: 14px 8px;
+        }
+
+        .cat-icon {
+            width: 48px;
+            height: 48px;
+        }
+
+        .cat-arrow {
+            width: 34px;
+            height: 34px;
+            font-size: 14px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .all-card {
+            grid-template-columns: repeat(2, minmax(120px, 1fr));
+            gap: 10px;
+        }
+
+        h2 {
+            font-size: 15px;
+        }
+
+        p {
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            padding: 8px 14px;
+            font-size: 13px;
+        }
+
+        .cat-section h3 {
+            font-size: 18px;
+        }
+
+        .cat-card {
+            width: 90px;
+            padding: 12px 6px;
+        }
+
+        .cat-icon {
+            width: 42px;
+            height: 42px;
+        }
+
+        .cat-card span {
+            font-size: 11px;
+        }
+
+        .cat-arrow.prev {
+            margin-right: 6px;
+        }
+
+        .cat-arrow.next {
+            margin-left: 6px;
+        }
     }
 
 </style>
