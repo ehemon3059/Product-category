@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+
+
+  * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 0;
+            background: #f3f4f6;
+        }
+
+        .card {
+            width: 220px;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 16px;
+            text-align: center;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+            transition: 0.35s ease;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+        }
+
+        .icon-wrapper {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 14px;
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        .icon-wrapper svg {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover .icon-wrapper svg {
+            transform: scale(1.08) rotate(-4deg);
+        }
+
+        h2 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 6px;
+        }
+
+        p {
+            font-size: 13px;
+            color: #6b7280;
+            margin-bottom: 14px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 9px 18px;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 8px;
+            background: #167486;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #125f6d;
+        }
+
+        @keyframes floating {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+.icon-wrapper {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+    .all-card{
+        display: grid;
+        grid-template-columns: repeat(4, minmax(200px, 1fr));
+        grid-gap: 16px;
+    }
+
+    /* ---- Category slider ---- */
+    .cat-section {
+        width: 100%;
+        max-width: 1300px;
+        margin: 60px auto 0;
+        padding: 0 20px;
+    }
+
+    .cat-section h3 {
+        font-size: 20px;
+        font-weight: 600;
+        color: #111827;
+        margin-bottom: 18px;
+    }
+
+    .cat-slider {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .cat-track {
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding: 8px 4px 16px;
+        scrollbar-width: none;
+    }
+
+    .cat-track::-webkit-scrollbar {
+        display: none;
+    }
+
+    .cat-card {
+        flex: 0 0 auto;
+        width: 130px;
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 18px 12px;
+        text-align: center;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        transition: 0.3s ease;
+        cursor: pointer;
+    }
+
+    .cat-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+    }
+
+    .cat-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 10px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+
+    .cat-card span {
+        display: block;
+        font-size: 13px;
+        font-weight: 500;
+        color: #111827;
+    }
+
+    .cat-arrow {
+        flex: 0 0 auto;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: none;
+        background: #1f2937;
+        color: #fff;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.2s;
+        z-index: 2;
+    }
+
+    .cat-arrow:hover {
+        background: #111827;
+    }
+
+    .cat-arrow.prev {
+        margin-right: 12px;
+    }
+
+    .cat-arrow.next {
+        margin-left: 12px;
+    }
+
+</style>
+</head>
+<body>
+
+
+    <div class="all-card">
+
+        <div class="card">
+            <div class="icon-wrapper" style="background-image: url('./Baby%20Items.svg');"></div>
+            <h2>Baby Items</h2>
+            <p>Explore the latest styles and trends.</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon-wrapper" style="background-image: url('./Bags.svg');"></div>
+            <h2>Bags</h2>
+            <p>Explore the latest styles and trends.</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon-wrapper" style="background-image: url('./Bathroom%20Counter%20Storage.svg');"></div>
+            <h2>Bathroom Counter Storage</h2>
+            <p>Explore the latest styles and trends.</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon-wrapper" style="background-image: url('./Beauty.svg');"></div>
+            <h2>Beauty</h2>
+            <p>Explore the latest styles and trends.</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon-wrapper" style="background-image: url('./Bedding%20Accessories.svg');"></div>
+            <h2>Bedding Accessories</h2>
+            <p>Explore the latest styles and trends.</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon-wrapper" style="background-image: url('./Eyewear.svg');"></div>
+            <h2>Eyewear</h2>
+            <p>Explore the latest styles and trends.</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon-wrapper" style="background-image: url('./Gadgets.svg');"></div>
+            <h2>Gadgets</h2>
+            <p>Explore the latest styles and trends.</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon-wrapper" style="background-image: url('./Gifts%20%26%20Craft.svg');"></div>
+            <h2>Gifts & Craft</h2>
+            <p>Explore the latest styles and trends.</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon-wrapper" style="background-image: url('./Groceries.svg');"></div>
+            <h2>Groceries</h2>
+            <p>Explore the latest styles and trends.</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon-wrapper" style="background-image: url('./Health.svg');"></div>
+            <h2>Health</h2>
+            <p>Explore the latest styles and trends.</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon-wrapper" style="background-image: url('./Home%20Decoration.svg');"></div>
+            <h2>Home Decoration</h2>
+            <p>Explore the latest styles and trends.</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon-wrapper" style="background-image: url('./Jewelry.svg');"></div>
+            <h2>Jewelry</h2>
+            <p>Explore the latest styles and trends.</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon-wrapper" style="background-image: url('./Kitchen%20Accessories.svg');"></div>
+            <h2>Kitchen Accessories</h2>
+            <p>Explore the latest styles and trends.</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon-wrapper" style="background-image: url('./Men%27s%20%26%20Boy%27s%20Fashion.svg');"></div>
+            <h2>Men's & Boy's Fashion</h2>
+            <p>Explore the latest styles and trends.</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon-wrapper" style="background-image: url('./Mens%20Wear.svg');"></div>
+            <h2>Mens Wear</h2>
+            <p>Explore the latest styles and trends.</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon-wrapper" style="background-image: url('./Mother%20%26%20Baby.svg');"></div>
+            <h2>Mother & Baby</h2>
+            <p>Explore the latest styles and trends.</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon-wrapper" style="background-image: url('./Shoes.svg');"></div>
+            <h2>Shoes</h2>
+            <p>Explore the latest styles and trends.</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon-wrapper" style="background-image: url('./Tools%20%26%20Hardware.svg');"></div>
+            <h2>Tools & Hardware</h2>
+            <p>Explore the latest styles and trends.</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon-wrapper" style="background-image: url('./Toys.svg');"></div>
+            <h2>Toys</h2>
+            <p>Explore the latest styles and trends.</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon-wrapper" style="background-image: url('./Watches.svg');"></div>
+            <h2>Watches</h2>
+            <p>Explore the latest styles and trends.</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon-wrapper" style="background-image: url('./Women%20Wear.svg');"></div>
+            <h2>Women Wear</h2>
+            <p>Explore the latest styles and trends.</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon-wrapper" style="background-image: url('./Women%27s%20%26%20Girl%27s%20Fashion.svg');"></div>
+            <h2>Women's & Girl's Fashion</h2>
+            <p>Explore the latest styles and trends.</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+
+    </div>
+
+    <section class="cat-section">
+        <h3>Shop by Category</h3>
+        <div class="cat-slider">
+            <button class="cat-arrow prev" onclick="scrollCat(-1)">&#10094;</button>
+
+            <div class="cat-track" id="catTrack">
+                <div class="cat-card">
+                    <div class="cat-icon" style="background-image: url('./Baby%20Items.svg');"></div>
+                    <span>Baby Items</span>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-icon" style="background-image: url('./Bags.svg');"></div>
+                    <span>Bags</span>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-icon" style="background-image: url('./Bathroom%20Counter%20Storage.svg');"></div>
+                    <span>Bathroom Storage</span>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-icon" style="background-image: url('./Beauty.svg');"></div>
+                    <span>Beauty</span>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-icon" style="background-image: url('./Bedding%20Accessories.svg');"></div>
+                    <span>Bedding</span>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-icon" style="background-image: url('./Eyewear.svg');"></div>
+                    <span>Eyewear</span>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-icon" style="background-image: url('./Gadgets.svg');"></div>
+                    <span>Gadgets</span>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-icon" style="background-image: url('./Gifts%20%26%20Craft.svg');"></div>
+                    <span>Gifts & Craft</span>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-icon" style="background-image: url('./Groceries.svg');"></div>
+                    <span>Groceries</span>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-icon" style="background-image: url('./Health.svg');"></div>
+                    <span>Health</span>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-icon" style="background-image: url('./Home%20Decoration.svg');"></div>
+                    <span>Home Decore</span>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-icon" style="background-image: url('./Jewelry.svg');"></div>
+                    <span>Jewelry</span>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-icon" style="background-image: url('./Kitchen%20Accessories.svg');"></div>
+                    <span>Kitchen</span>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-icon" style="background-image: url('./Men%27s%20%26%20Boy%27s%20Fashion.svg');"></div>
+                    <span>Men's Fashion</span>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-icon" style="background-image: url('./Mens%20Wear.svg');"></div>
+                    <span>Mens Wear</span>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-icon" style="background-image: url('./Mother%20%26%20Baby.svg');"></div>
+                    <span>Mother & Baby</span>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-icon" style="background-image: url('./Shoes.svg');"></div>
+                    <span>Shoes</span>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-icon" style="background-image: url('./Tools%20%26%20Hardware.svg');"></div>
+                    <span>Tools & Hardware</span>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-icon" style="background-image: url('./Toys.svg');"></div>
+                    <span>Toys</span>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-icon" style="background-image: url('./Watches.svg');"></div>
+                    <span>Watches</span>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-icon" style="background-image: url('./Women%20Wear.svg');"></div>
+                    <span>Women Wear</span>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-icon" style="background-image: url('./Women%27s%20%26%20Girl%27s%20Fashion.svg');"></div>
+                    <span>Women's Fashion</span>
+                </div>
+            </div>
+
+            <button class="cat-arrow next" onclick="scrollCat(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <script>
+        function scrollCat(direction) {
+            const track = document.getElementById('catTrack');
+            track.scrollBy({ left: direction * 300, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
