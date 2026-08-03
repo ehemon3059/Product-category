@@ -73,19 +73,50 @@
         }
 
         .btn {
+            position: relative;
             display: inline-block;
             padding: 9px 18px;
             font-size: 14px;
             font-weight: 500;
             border-radius: 8px;
-            background: #167486;
-            color: white;
+            border: 1.5px solid #E54D73;
+            background: transparent;
+            color: #E54D73;
             text-decoration: none;
-            transition: 0.3s;
+            overflow: hidden;
+            isolation: isolate;
+            transition: color 0.4s ease;
+        }
+
+        .btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 120%;
+            height: 100%;
+            background-color: #E54D73;
+            backface-visibility: hidden;
+            will-change: transform;
+            transform: rotate3d(0, 0, 1, 10deg) translate3d(-1.2em, 110%, 0);
+            transform-origin: 0% 100%;
+            transition: transform 0.45s ease;
         }
 
         .btn:hover {
-            background: #125f6d;
+            color: #ffffff;
+        }
+
+        .btn:hover::after {
+            transform: rotate3d(0, 0, 1, 0deg) translate3d(0, 0, 0);
         }
 
         @keyframes floating {
@@ -321,154 +352,154 @@
             <div class="icon-wrapper" style="background-image: url('./Baby%20Items.svg');"></div>
             <h2>Baby Items</h2>
             <p>Explore the latest styles and trends.</p>
-            <a href="#" class="btn">Shop Now</a>
+            <a href="#" class="btn"><span>Shop Now</span></a>
         </div>
 
         <div class="card">
             <div class="icon-wrapper" style="background-image: url('./Bags.svg');"></div>
             <h2>Bags</h2>
             <p>Explore the latest styles and trends.</p>
-            <a href="#" class="btn">Shop Now</a>
+            <a href="#" class="btn"><span>Shop Now</span></a>
         </div>
 
         <div class="card">
             <div class="icon-wrapper" style="background-image: url('./Bathroom%20Counter%20Storage.svg');"></div>
             <h2>Bathroom Counter Storage</h2>
             <p>Explore the latest styles and trends.</p>
-            <a href="#" class="btn">Shop Now</a>
+            <a href="#" class="btn"><span>Shop Now</span></a>
         </div>
 
         <div class="card">
             <div class="icon-wrapper" style="background-image: url('./Beauty.svg');"></div>
             <h2>Beauty</h2>
             <p>Explore the latest styles and trends.</p>
-            <a href="#" class="btn">Shop Now</a>
+            <a href="#" class="btn"><span>Shop Now</span></a>
         </div>
 
         <div class="card">
             <div class="icon-wrapper" style="background-image: url('./Bedding%20Accessories.svg');"></div>
             <h2>Bedding Accessories</h2>
             <p>Explore the latest styles and trends.</p>
-            <a href="#" class="btn">Shop Now</a>
+            <a href="#" class="btn"><span>Shop Now</span></a>
         </div>
 
         <div class="card">
             <div class="icon-wrapper" style="background-image: url('./Eyewear.svg');"></div>
             <h2>Eyewear</h2>
             <p>Explore the latest styles and trends.</p>
-            <a href="#" class="btn">Shop Now</a>
+            <a href="#" class="btn"><span>Shop Now</span></a>
         </div>
 
         <div class="card">
             <div class="icon-wrapper" style="background-image: url('./Gadgets.svg');"></div>
             <h2>Gadgets</h2>
             <p>Explore the latest styles and trends.</p>
-            <a href="#" class="btn">Shop Now</a>
+            <a href="#" class="btn"><span>Shop Now</span></a>
         </div>
 
         <div class="card">
             <div class="icon-wrapper" style="background-image: url('./Gifts%20%26%20Craft.svg');"></div>
             <h2>Gifts & Craft</h2>
             <p>Explore the latest styles and trends.</p>
-            <a href="#" class="btn">Shop Now</a>
+            <a href="#" class="btn"><span>Shop Now</span></a>
         </div>
 
         <div class="card">
             <div class="icon-wrapper" style="background-image: url('./Groceries.svg');"></div>
             <h2>Groceries</h2>
             <p>Explore the latest styles and trends.</p>
-            <a href="#" class="btn">Shop Now</a>
+            <a href="#" class="btn"><span>Shop Now</span></a>
         </div>
 
         <div class="card">
             <div class="icon-wrapper" style="background-image: url('./Health.svg');"></div>
             <h2>Health</h2>
             <p>Explore the latest styles and trends.</p>
-            <a href="#" class="btn">Shop Now</a>
+            <a href="#" class="btn"><span>Shop Now</span></a>
         </div>
 
         <div class="card">
             <div class="icon-wrapper" style="background-image: url('./Home%20Decoration.svg');"></div>
             <h2>Home Decoration</h2>
             <p>Explore the latest styles and trends.</p>
-            <a href="#" class="btn">Shop Now</a>
+            <a href="#" class="btn"><span>Shop Now</span></a>
         </div>
 
         <div class="card">
             <div class="icon-wrapper" style="background-image: url('./Jewelry.svg');"></div>
             <h2>Jewelry</h2>
             <p>Explore the latest styles and trends.</p>
-            <a href="#" class="btn">Shop Now</a>
+            <a href="#" class="btn"><span>Shop Now</span></a>
         </div>
 
         <div class="card">
             <div class="icon-wrapper" style="background-image: url('./Kitchen%20Accessories.svg');"></div>
             <h2>Kitchen Accessories</h2>
             <p>Explore the latest styles and trends.</p>
-            <a href="#" class="btn">Shop Now</a>
+            <a href="#" class="btn"><span>Shop Now</span></a>
         </div>
 
         <div class="card">
             <div class="icon-wrapper" style="background-image: url('./Men%27s%20%26%20Boy%27s%20Fashion.svg');"></div>
             <h2>Men's & Boy's Fashion</h2>
             <p>Explore the latest styles and trends.</p>
-            <a href="#" class="btn">Shop Now</a>
+            <a href="#" class="btn"><span>Shop Now</span></a>
         </div>
 
         <div class="card">
             <div class="icon-wrapper" style="background-image: url('./Mens%20Wear.svg');"></div>
             <h2>Mens Wear</h2>
             <p>Explore the latest styles and trends.</p>
-            <a href="#" class="btn">Shop Now</a>
+            <a href="#" class="btn"><span>Shop Now</span></a>
         </div>
 
         <div class="card">
             <div class="icon-wrapper" style="background-image: url('./Mother%20%26%20Baby.svg');"></div>
             <h2>Mother & Baby</h2>
             <p>Explore the latest styles and trends.</p>
-            <a href="#" class="btn">Shop Now</a>
+            <a href="#" class="btn"><span>Shop Now</span></a>
         </div>
 
         <div class="card">
             <div class="icon-wrapper" style="background-image: url('./Shoes.svg');"></div>
             <h2>Shoes</h2>
             <p>Explore the latest styles and trends.</p>
-            <a href="#" class="btn">Shop Now</a>
+            <a href="#" class="btn"><span>Shop Now</span></a>
         </div>
 
         <div class="card">
             <div class="icon-wrapper" style="background-image: url('./Tools%20%26%20Hardware.svg');"></div>
             <h2>Tools & Hardware</h2>
             <p>Explore the latest styles and trends.</p>
-            <a href="#" class="btn">Shop Now</a>
+            <a href="#" class="btn"><span>Shop Now</span></a>
         </div>
 
         <div class="card">
             <div class="icon-wrapper" style="background-image: url('./Toys.svg');"></div>
             <h2>Toys</h2>
             <p>Explore the latest styles and trends.</p>
-            <a href="#" class="btn">Shop Now</a>
+            <a href="#" class="btn"><span>Shop Now</span></a>
         </div>
 
         <div class="card">
             <div class="icon-wrapper" style="background-image: url('./Watches.svg');"></div>
             <h2>Watches</h2>
             <p>Explore the latest styles and trends.</p>
-            <a href="#" class="btn">Shop Now</a>
+            <a href="#" class="btn"><span>Shop Now</span></a>
         </div>
 
         <div class="card">
             <div class="icon-wrapper" style="background-image: url('./Women%20Wear.svg');"></div>
             <h2>Women Wear</h2>
             <p>Explore the latest styles and trends.</p>
-            <a href="#" class="btn">Shop Now</a>
+            <a href="#" class="btn"><span>Shop Now</span></a>
         </div>
 
         <div class="card">
             <div class="icon-wrapper" style="background-image: url('./Women%27s%20%26%20Girl%27s%20Fashion.svg');"></div>
             <h2>Women's & Girl's Fashion</h2>
             <p>Explore the latest styles and trends.</p>
-            <a href="#" class="btn">Shop Now</a>
+            <a href="#" class="btn"><span>Shop Now</span></a>
         </div>
 
     </div>
